@@ -2,16 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnYes = document.querySelector(".btnYes");
   const btnNo = document.querySelector(".btnNo");
   const text = document.getElementById("text");
-  const container = document.querySelector(".container");
-
-  btnNo.addEventListener("mouseover", () => {
-    moveNoButton();
-  });
-
-  btnNo.addEventListener("touchstart", (event) => {
-    event.preventDefault(); // Prevent default touch behavior (e.g., scrolling)
-    moveNoButton();
-  });
 
   let isFirstTimeClicked = true;
 
@@ -42,6 +32,19 @@ document.addEventListener("DOMContentLoaded", function () {
     btnYes.style.display = "none";
     btnNo.style.display = "none";
   }
+
+  btnNo.addEventListener("click", function () {
+    moveNoButton();
+  });
+
+  btnNo.addEventListener("mouseover", function () {
+    moveNoButton();
+  });
+
+  btnNo.addEventListener("touchstart", function (event) {
+    event.preventDefault(); // Prevent default touch behavior (e.g., scrolling)
+    moveNoButton();
+  });
 
   btnYes.addEventListener("click", function () {
     if (isFirstTimeClicked) {
